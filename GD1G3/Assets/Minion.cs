@@ -11,13 +11,16 @@ public class Minion : MonoBehaviour {
 	
 	private float minionX = 0;
 	private float minionY = 0;
+	private float xVel;
 	private int minionType;
+	
 	
 
 	// Use this for initialization
 	void Start () {
 		if (fast){
 			minionType = 1;
+			xVel = Random.Range(-5.0f, 5.0f);
 		}
 		else if (snake){
 			minionType = 2;
@@ -37,7 +40,7 @@ public class Minion : MonoBehaviour {
 		// fast
 		if (minionType == 1){
 			if (x == 0 || y == 0){
-				GetComponent<Rigidbody>().velocity = new Vector3(Random.Range(-5.0f, 5.0f), 10.0f, 0.0f);
+				GetComponent<Rigidbody>().velocity = new Vector3(xVel, -10.0f, 0.0f);
 			}
 		}
 		// wiggle
