@@ -13,6 +13,7 @@ public class Minion : MonoBehaviour {
 	private float minionY = 0;
 	private float xVar;
 	private int minionType;
+	private Rigidbody rb;
 	
 	
 
@@ -31,6 +32,7 @@ public class Minion : MonoBehaviour {
 			minionType = 3;
 			xVar = Random.Range(1.0f, 4.0f);
 		}
+		rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -43,16 +45,16 @@ public class Minion : MonoBehaviour {
 		// fast
 		if (minionType == 1){
 			if (x == 0 || y == 0){
-				GetComponent<Rigidbody>().velocity = new Vector3(xVar, -minionSpeed, 0.0f);
+				rb.velocity = new Vector3(xVar, -minionSpeed, 0.0f);
 			}
 		}
 		// wiggle
 		else if (minionType == 2){
-			GetComponent<Rigidbody>().velocity = new Vector3(minionSpeed, Mathf.Sin(Time.time) * xVar, 0.0f);
+			rb.velocity = new Vector3(minionSpeed, Mathf.Sin(Time.time) * xVar, 0.0f);
 		}
 		// snake
 		else if (minionType == 3){
-			GetComponent<Rigidbody>().velocity = new Vector3(Mathf.Cos(Time.time) * xVar, -minionSpeed, 0.0f);
+			rb.velocity = new Vector3(Mathf.Cos(Time.time) * xVar, -minionSpeed, 0.0f);
 		}
 		
 		Vector3 minionPos = transform.position;
