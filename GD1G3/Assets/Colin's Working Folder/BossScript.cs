@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MovementScript : MonoBehaviour
+public class BossScript : MonoBehaviour
 {
     public int health;
     public int energy;
@@ -14,8 +14,8 @@ public class MovementScript : MonoBehaviour
     void Update()
     {
         //Debug.Log(transform.position);
-        rb.velocity = new Vector3(Input.GetAxis("Horizontal")*speed,rb.velocity[1],Input.GetAxis("Vertical")*speed);
-        if ( health == 0)
+        rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speed, rb.velocity[1], Input.GetAxis("Vertical") * speed);
+        if (health == 0)
         {
             //endgame
         }
@@ -23,7 +23,7 @@ public class MovementScript : MonoBehaviour
         {
             Debug.Log(Time.time);
         }
-        
+
     }
 
 }
