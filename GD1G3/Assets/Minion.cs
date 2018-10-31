@@ -51,9 +51,12 @@ public class Minion : MonoBehaviour {
 		
 		Vector3 minionPos = transform.position;
 		
-		// if minion reaches bottom of screen, wrap to top
+		// if minion reaches bottom/top,  wrap to opposite side
 		if (minionPos.y < -6){
 			minionPos.y = 6;
+		}
+		else if (minionPos.y > 6){
+			minionPos.y = -6;
 		}
 		
 		// if minion reaches left/right, wrap to opposite side
@@ -63,6 +66,7 @@ public class Minion : MonoBehaviour {
 		else if(minionPos.x < -15){
 			minionPos.x = 15;
 		}
+		
 		transform.position = minionPos;
 	}
 }
