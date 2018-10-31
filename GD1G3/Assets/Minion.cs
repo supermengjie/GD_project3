@@ -45,26 +45,26 @@ public class Minion : MonoBehaviour {
 		// fast
 		if (minionType == 1){
 			if (x == 0 || y == 0){
-				rb.velocity = new Vector3(xVar, -minionSpeed, 0.0f);
+				rb.velocity = new Vector3(xVar, 0.0f, -minionSpeed);
 			}
 		}
 		// wiggle
 		else if (minionType == 2){
-			rb.velocity = new Vector3(minionSpeed, Mathf.Sin(Time.time) * xVar, 0.0f);
+			rb.velocity = new Vector3(minionSpeed, 0.0f, Mathf.Sin(Time.time) * xVar);
 		}
 		// snake
 		else if (minionType == 3){
-			rb.velocity = new Vector3(Mathf.Cos(Time.time) * xVar, -minionSpeed, 0.0f);
+			rb.velocity = new Vector3(Mathf.Cos(Time.time) * xVar, 0.0f, -minionSpeed);
 		}
 		
 		Vector3 minionPos = transform.position;
 		
 		// if minion reaches bottom/top,  wrap to opposite side
-		if (minionPos.y < -6){
-			minionPos.y = 6;
+		if (minionPos.z < -6){
+			minionPos.z = 6;
 		}
-		else if (minionPos.y > 6){
-			minionPos.y = -6;
+		else if (minionPos.z > 6){
+			minionPos.z = -6;
 		}
 		
 		// if minion reaches left/right, wrap to opposite side
