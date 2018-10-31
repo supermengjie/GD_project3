@@ -5,28 +5,31 @@ using UnityEngine;
 public class Minion : MonoBehaviour {
 	
 	public bool fast;
-	public bool snake;
 	public bool wiggle;
+	public bool snake;
 	public int minionSpeed;
 	
 	private float minionX = 0;
 	private float minionY = 0;
-	private float xVel;
+	private float xVar;
 	private int minionType;
 	
 	
 
 	// Use this for initialization
 	void Start () {
+		// xVar is used to add variation to the patterns
 		if (fast){
 			minionType = 1;
-			xVel = Random.Range(-5.0f, 5.0f);
-		}
-		else if (snake){
-			minionType = 2;
+			xVar = Random.Range(-5.0f, 5.0f);
 		}
 		else if (wiggle){
+			minionType = 2;
+			xVar = Random.Range(4.0f, 6.0f);
+		}
+		else if (snake){
 			minionType = 3;
+			xVar = Random.Range(1.0f, 4.0f);
 		}
 	}
 	
@@ -40,16 +43,16 @@ public class Minion : MonoBehaviour {
 		// fast
 		if (minionType == 1){
 			if (x == 0 || y == 0){
-				GetComponent<Rigidbody>().velocity = new Vector3(xVel, -10.0f, 0.0f);
+				GetComponent<Rigidbody>().velocity = new Vector3(xVar, -minionSpeed, 0.0f);
 			}
 		}
 		// wiggle
 		else if (minionType == 2){
-			GetComponent<Rigidbody>().velocity = new Vector3(minionSpeed, Mathf.Sin(Time.time) * 5, 0.0f);
+			GetComponent<Rigidbody>().velocity = new Vector3(minionSpeed, Mathf.Sin(Time.time) * xVar, 0.0f);
 		}
 		// snake
 		else if (minionType == 3){
-			GetComponent<Rigidbody>().velocity = new Vector3(Mathf.Cos(Time.time) * 2, -minionSpeed, 0.0f);
+			GetComponent<Rigidbody>().velocity = new Vector3(Mathf.Cos(Time.time) * xVar, -minionSpeed, 0.0f);
 		}
 		
 		Vector3 minionPos = transform.position;
