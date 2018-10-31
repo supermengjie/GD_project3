@@ -13,9 +13,12 @@ public class MovementScript : MonoBehaviour
     void Update()
     {
         CharacterController controller = GetComponent<CharacterController>();
-        transform.Rotate(0, Input.GetAxis("Horizontal") * rotateSpeed, 0);
         Vector3 forward = transform.TransformDirection(Vector3.forward);
-        float curSpeed = speed * Input.GetAxis("Vertical");
-        controller.SimpleMove(forward * curSpeed);
+        Vector3 horizontal = transform.TransformDirection(Vector3.right);
+        float updownSpeed = speed * Input.GetAxis("Vertical");
+        float leftrightSpeed = speed * Input.GetAxis("Horizontal");
+        Vector3 movement = forward * updownSpeed + horizontal * leftrightSpeed;
+        //Debug.Log(transform.position);
+        controller.SimpleMove(movement);
     }
 }
