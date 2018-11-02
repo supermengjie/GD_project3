@@ -18,22 +18,25 @@ public class Minion_Spawner : MonoBehaviour {
 	void Update () {
         if (currentFrames > framesSinceLastSpawn)
         {
+            float currentRotation = transform.localEulerAngles.y;
+            Vector3 spawnLocation = new Vector3(Mathf.Sin(currentRotation), 0, Mathf.Cos(currentRotation));
+            spawnLocation *= spawnOffset;
             if (Input.GetAxis("Spawn1") == 1)
             {
                 GameObject go = Instantiate(fastMinion) as GameObject;
-                go.transform.position = transform.position + new Vector3(spawnOffset, 0, 0);
+                go.transform.position = spawnLocation;
                 currentFrames = 0;
             }
             else if (Input.GetAxis("Spawn2") == 1)
             {
                 GameObject go = Instantiate(snakeMinion) as GameObject;
-                go.transform.position = transform.position + new Vector3(spawnOffset, 0, 0);
+                go.transform.position = spawnLocation;
                 currentFrames = 0;
             }
             else if (Input.GetAxis("Spawn3") == 1)
             {
                 GameObject go = Instantiate(wiggleMinion) as GameObject;
-                go.transform.position = transform.position + new Vector3(spawnOffset, 0, 0);
+                go.transform.position = spawnLocation;
                 currentFrames = 0;
             }
         }
