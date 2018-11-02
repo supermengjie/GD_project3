@@ -12,8 +12,11 @@ public class Minion : MonoBehaviour {
 	private float minionX = 0;
 	private float minionY = 0;
 	private float xVar;
-	private int minionType;
+    private int minionDirX;
+    private int minionDirY;
+    private int minionType;
 	private Rigidbody rb;
+    
 	
 	
 
@@ -33,7 +36,9 @@ public class Minion : MonoBehaviour {
 			xVar = Random.Range(1.0f, 4.0f);
 		}
 		rb = GetComponent<Rigidbody>();
-	}
+        minionDirX = 1;
+        minionDirY = 1;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -45,35 +50,39 @@ public class Minion : MonoBehaviour {
 		// fast
 		if (minionType == 1){
 			if (x == 0 || y == 0){
-				rb.velocity = new Vector3(xVar, 0.0f, -minionSpeed);
+				rb.velocity = new Vector3(xVar * minionDirX, 0.0f, -minionSpeed * minionDirY);
 			}
 		}
 		// wiggle
 		else if (minionType == 2){
-			rb.velocity = new Vector3(minionSpeed, 0.0f, Mathf.Sin(Time.time) * xVar);
+			rb.velocity = new Vector3(minionSpeed * minionDirX, 0.0f, Mathf.Sin(Time.time) * xVar * minionDirY);
 		}
 		// snake
 		else if (minionType == 3){
-			rb.velocity = new Vector3(Mathf.Cos(Time.time) * xVar, 0.0f, -minionSpeed);
+			rb.velocity = new Vector3(Mathf.Cos(Time.time) * xVar * minionDirX, 0.0f, -minionSpeed * minionDirY);
 		}
 		
 		Vector3 minionPos = transform.position;
 		
 		// if minion reaches bottom/top,  wrap to opposite side
 		if (minionPos.z < -6){
-			minionPos.z = 6;
-		}
+            minionDirY *= -1;
+            minionPos.z = -6;
+        }
 		else if (minionPos.z > 6){
-			minionPos.z = -6;
-		}
+            minionDirY *= -1;
+            minionPos.z = 6;
+        }
 		
 		// if minion reaches left/right, wrap to opposite side
 		if (minionPos.x > 15){
-			minionPos.x = -15;
-		}
+            minionDirX *= -1;
+            minionPos.x = 15;
+        }
 		else if(minionPos.x < -15){
-			minionPos.x = 15;
-		}
+            minionDirX *= -1;
+            minionPos.x = -15;
+        }
 		
 		transform.position = minionPos;
 	}
