@@ -7,6 +7,7 @@ public class BossScript : MonoBehaviour
 {
     public int healthMax;
     public int energyMax;
+    public float energyRegenPeriod;
     public float speed = 3.0F;
     private Rigidbody rb;
     private int currentHealth;
@@ -30,7 +31,7 @@ public class BossScript : MonoBehaviour
         }
         if (currentEnergy < 100)
         {
-            if (Time.time > lastTime + 0.1)
+            if (Time.time > lastTime + energyRegenPeriod)
             {
                 lastTime = Time.time;
                 currentEnergy += 1;
