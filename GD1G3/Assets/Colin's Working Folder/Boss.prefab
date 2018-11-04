@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 114705963842099776}
   - component: {fileID: 114321885417793726}
   - component: {fileID: 135437780387111020}
+  - component: {fileID: 114989595788597442}
   m_Layer: 11
   m_Name: Boss
   m_TagString: Boss
@@ -229,8 +230,13 @@ MonoBehaviour:
     type: 2}
   wiggleMinion: {fileID: 1002471513510688, guid: 1620dc203f4b4924e89ab63e8815b90e,
     type: 2}
-  spawnOffset: 2
+  energyMax: 0
+  energyRegenPeriod: 0.1
+  spawnOffset: 5
   framesSinceLastSpawn: 60
+  spawn1Energy: 10
+  spawn2Energy: 20
+  spawn3Energy: 30
 --- !u!114 &114705963842099776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -243,9 +249,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthMax: 0
-  energyMax: 0
-  energyRegenPeriod: 0
   speed: 3
+--- !u!114 &114989595788597442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1834569541744742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1b9163ea7849943bf1d274ac5fb34f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 1106084936124398, guid: 078aafb0b67171644a050fb0e59cd5b0, type: 2}
+  bulletSpeed: 0
+  coolDown: 0
+  spawnOffset: 0
 --- !u!135 &135437780387111020
 SphereCollider:
   m_ObjectHideFlags: 1

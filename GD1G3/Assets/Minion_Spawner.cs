@@ -35,11 +35,9 @@ public class Minion_Spawner : MonoBehaviour {
         }
         if (currentFrames > framesSinceLastSpawn)
         {
-            float currentRotation = transform.localEulerAngles.y;
             Vector3 spawnLocation = transform.TransformDirection(Vector3.forward);
             spawnLocation *= spawnOffset;
             spawnLocation += transform.localPosition;
-            Debug.Log(transform.localPosition);
             if (Input.GetAxis("Spawn1") == 1)
             {
                 if (currentEnergy > spawn1Energy)

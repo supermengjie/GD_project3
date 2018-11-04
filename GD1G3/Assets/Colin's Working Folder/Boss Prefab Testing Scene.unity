@@ -314,30 +314,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114321885417793726, guid: cb8bcf110a9c77c4cae38292c83004c0,
+    - target: {fileID: 114989595788597442, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: coolDown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114989595788597442, guid: cb8bcf110a9c77c4cae38292c83004c0,
         type: 2}
       propertyPath: spawnOffset
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114321885417793726, guid: cb8bcf110a9c77c4cae38292c83004c0,
+    - target: {fileID: 114989595788597442, guid: cb8bcf110a9c77c4cae38292c83004c0,
         type: 2}
-      propertyPath: spawn1Energy
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114321885417793726, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: spawn2Energy
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114321885417793726, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: spawn3Energy
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114321885417793726, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: energyRegenPeriod
-      value: 0.1
+      propertyPath: bulletSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}

@@ -17,8 +17,7 @@ public class BossScript : MonoBehaviour
         currentHealth = healthMax;
     }
 
-    float lastAngle = 0;
-    void Update()
+    private void Update()
     {
         //Debug.Log(transform.position);
         rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speed, rb.velocity[1], Input.GetAxis("Vertical") * speed);
