@@ -21,11 +21,16 @@ public class Minion_Spawner : MonoBehaviour {
             float currentRotation = transform.localEulerAngles.y;
             Vector3 spawnLocation = new Vector3(Mathf.Sin(currentRotation), 0, Mathf.Cos(currentRotation));
             spawnLocation *= spawnOffset;
+            spawnLocation += transform.localPosition;
+            spawnLocation[1] = 0.1F;
+            Debug.Log(transform.localPosition);
             if (Input.GetAxis("Spawn1") == 1)
             {
                 GameObject go = Instantiate(fastMinion) as GameObject;
                 go.transform.position = spawnLocation;
                 currentFrames = 0;
+                Debug.Log("minion spawn position");
+                Debug.Log(go.transform.position);
             }
             else if (Input.GetAxis("Spawn2") == 1)
             {

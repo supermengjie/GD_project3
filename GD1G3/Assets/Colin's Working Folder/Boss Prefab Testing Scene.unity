@@ -113,6 +113,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &35921797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1834569541744742, guid: cb8bcf110a9c77c4cae38292c83004c0,
+    type: 2}
+  m_PrefabInternal: {fileID: 920605810}
+--- !u!65 &35921802
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 35921797}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.3, y: 1, z: 1.4}
+  m_Center: {x: 0, y: 0.5, z: 1.5}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +207,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!1001 &827766723
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4083575575396520, guid: 73cfa54b0175f2947befd55b5e47582f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.005859375
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083575575396520, guid: 73cfa54b0175f2947befd55b5e47582f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.0061721
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083575575396520, guid: 73cfa54b0175f2947befd55b5e47582f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.9899023
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083575575396520, guid: 73cfa54b0175f2947befd55b5e47582f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083575575396520, guid: 73cfa54b0175f2947befd55b5e47582f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083575575396520, guid: 73cfa54b0175f2947befd55b5e47582f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083575575396520, guid: 73cfa54b0175f2947befd55b5e47582f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083575575396520, guid: 73cfa54b0175f2947befd55b5e47582f, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813008722138142, guid: 73cfa54b0175f2947befd55b5e47582f, type: 2}
+      propertyPath: m_Name
+      value: Cube
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73cfa54b0175f2947befd55b5e47582f, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &920605810
 Prefab:
   m_ObjectHideFlags: 0
@@ -229,7 +292,33 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 143634293930536084, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: m_Height
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 136558461329786630, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: m_Direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 136558461329786630, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 136558461329786630, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: m_Height
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 136558461329786630, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 136558461329786630, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1102578218

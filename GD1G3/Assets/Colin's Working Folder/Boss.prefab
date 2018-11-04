@@ -273,6 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthMax: 0
   energyMax: 0
+  energyRegenPeriod: 0
   speed: 3
 --- !u!136 &136558461329786630
 CapsuleCollider:
