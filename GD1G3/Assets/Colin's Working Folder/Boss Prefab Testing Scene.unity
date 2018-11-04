@@ -160,8 +160,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 26.991467
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -273,9 +273,9 @@ Transform:
   m_LocalScale: {x: 30, y: 1, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1527782318
+--- !u!1001 &1329916891
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -312,11 +312,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4018759833657524, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
       propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114989595788597442, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: coolDown
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1834569541744742, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
-      propertyPath: m_Name
-      value: Capsule
+    - target: {fileID: 114989595788597442, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: spawnOffset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114989595788597442, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: bulletSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
@@ -385,5 +396,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

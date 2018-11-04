@@ -439,6 +439,21 @@ Prefab:
       propertyPath: m_Center.x
       value: 0.07
       objectReference: {fileID: 0}
+    - target: {fileID: 114705963842099776, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: energyRegen
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114705963842099776, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: energyMax
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114705963842099776, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: healthMax
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 23637643467179502, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
     - {fileID: 33660312285710962, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}

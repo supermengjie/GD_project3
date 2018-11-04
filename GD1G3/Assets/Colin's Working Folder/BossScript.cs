@@ -6,21 +6,18 @@ using System;
 public class BossScript : MonoBehaviour
 {
     public int healthMax;
-    public int energyMax;
     public float speed = 3.0F;
     private Rigidbody rb;
     private int currentHealth;
-    private int currentEnergy;
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         currentHealth = healthMax;
-        currentEnergy = energyMax;
     }
-    float lastTime = 0;
-    float lastAngle = 0;
-    void Update()
+
+    private void Update()
     {
         //Debug.Log(transform.position);
         rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speed, rb.velocity[1], Input.GetAxis("Vertical") * speed);
@@ -28,14 +25,7 @@ public class BossScript : MonoBehaviour
         {
             //endgame
         }
-        if (currentEnergy < 100)
-        {
-            if (Time.time > lastTime + 0.1)
-            {
-                lastTime = Time.time;
-                currentEnergy += 1;
-            }
-        }
+       
         Vector2 mouseLocation = Input.mousePosition;
         double newAngle = GetDirection(mouseLocation[0], mouseLocation[1]);
         transform.localEulerAngles = new Vector3(0, (float)newAngle, 0);
