@@ -12,6 +12,7 @@ public class Minion_Spawner : MonoBehaviour {
     public int framesSinceLastSpawn;
 	// Use this for initialization
 	void Start () {
+        spawnOffset *= -1;
 	}
 	int currentFrames = 0;
 	// Update is called once per frame
@@ -19,10 +20,9 @@ public class Minion_Spawner : MonoBehaviour {
         if (currentFrames > framesSinceLastSpawn)
         {
             float currentRotation = transform.localEulerAngles.y;
-            Vector3 spawnLocation = new Vector3(Mathf.Sin(currentRotation), 0, Mathf.Cos(currentRotation));
+            Vector3 spawnLocation = transform.TransformDirection(Vector3.forward);
             spawnLocation *= spawnOffset;
             spawnLocation += transform.localPosition;
-            spawnLocation[1] = 0.1F;
             Debug.Log(transform.localPosition);
             if (Input.GetAxis("Spawn1") == 1)
             {
