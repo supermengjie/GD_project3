@@ -14,11 +14,15 @@ public class heroAI : MonoBehaviour {
     public float maxDistFromWall = 0f;
     public int maxDist = 5;
     public int minDist = 5;
+    public int maxHealth = 100;
+    public int bulletDamage = 5;
+    public int minionDamage = 10;
     // Use this for initialization
 
     public float moveSpeed = 3f;
     public float rotSpeed = 100f;
 
+    private int currentHealth;
     private bool isWandering = false;
     private bool rotatingLeft = false;
     private bool rotatingRight = false;
@@ -34,32 +38,18 @@ public class heroAI : MonoBehaviour {
         rbody = GetComponent<Rigidbody>();
         moveDir = ChooseDirection();
         transform.rotation = Quaternion.LookRotation(moveDir);
-
+        currentHealth = maxHealth;
 
 
     }
 	
 	// Update is called once per frame
 	void Update () {
-        /*rbody.velocity = moveDir * moveSpeed;
-        if(Physics.Raycast(transform.position,transform.forward,maxDistFromWall,whatIsWall))
-        {
-            moveDir = ChooseDirection();
-            transform.rotation = Quaternion.LookRotation(moveDir);
-
-        }*/
-
-       // transform.LookAt(target);
-
-        
        if (Vector3.Distance(transform.position, target.position) <= 10)
         {
             transform.LookAt(target);
-            Debug.Log("we at" + transform.position + " boss at" + target.position);
-
             if (Vector3.Distance(transform.position, target.position) >= minDist)
             {
-                //Debug.Log("time: "+Time.deltaTime);
                 transform.position += transform.forward * moveSpeed * Time.deltaTime;
             }
         }else{
@@ -80,7 +70,6 @@ public class heroAI : MonoBehaviour {
 
             if (isWalking == true)
             {
-                //moveDir = ChooseDirection();
                 transform.position += transform.forward * moveSpeed * Time.deltaTime;
 
             }
@@ -150,4 +139,31 @@ public class heroAI : MonoBehaviour {
         isWandering = false;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.gameObject.layer);
+        if (collision.gameObject.layer == 9) // Collision with bullet
+        {
+            Destroy(collision.gameObject);
+            currentHealth -= bulletDamage;
+            Debug.Log(currentHealth);
+            //stagger less than when there is a collision witha  minion?
+        }
+
+        if (collision.gameObject.layer == 8) // Collision with minion
+        {
+            currentHealth -= minionDamage;
+            //stagger?
+        }
+        if (collision.gameObject.layer == 11) // Collision with Boss
+        {
+            //stop for a few seconds?
+        }
+        if ( currentHealth <= 0) // round won
+        {
+            Debug.Log("GG");
+            Destroy(gameObject);
+            //change to new scene somehow
+        }
+    }
 }
