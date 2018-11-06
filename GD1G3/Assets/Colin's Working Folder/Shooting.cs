@@ -18,7 +18,6 @@ public class Shooting : MonoBehaviour {
         {
             if (Time.time > coolDown + lastTime)
             {
-                Debug.Log("shoot");
                 Vector3 currentDirection = transform.TransformDirection(Vector3.forward);
                 Vector3 spawnLocation = currentDirection * spawnOffset * -1;
                 spawnLocation += transform.localPosition;
