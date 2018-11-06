@@ -8,6 +8,7 @@ public class Minion : MonoBehaviour {
 	public bool wiggle;
 	public bool snake;
 	public int minionSpeed;
+	public float damage;
 	
 	private float minionX = 0;
 	private float minionY = 0;
@@ -85,5 +86,12 @@ public class Minion : MonoBehaviour {
         }
 		
 		transform.position = minionPos;
+	}
+	
+	void OnTriggerEnter(Collider other){
+		if (other.gameObject.layer == 10){
+			other.gameObject.GetComponent<MovementScript>().hp -= damage;
+			Destroy(this.gameObject);
+		}
 	}
 }

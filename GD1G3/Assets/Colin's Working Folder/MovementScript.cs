@@ -1,15 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MovementScript : MonoBehaviour
 {
     public int health;
     public int energy;
     public float speed = 3.0F;
+		public float hp;
+		
+		private float maxHp;
     private Rigidbody rb;
+		
+		
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+      rb = GetComponent<Rigidbody>();
+			maxHp = hp;
     }
     void Update()
     {
