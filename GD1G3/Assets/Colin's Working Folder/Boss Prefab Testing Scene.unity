@@ -327,7 +327,7 @@ Prefab:
     - target: {fileID: 114989595788597442, guid: cb8bcf110a9c77c4cae38292c83004c0,
         type: 2}
       propertyPath: bulletSpeed
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
