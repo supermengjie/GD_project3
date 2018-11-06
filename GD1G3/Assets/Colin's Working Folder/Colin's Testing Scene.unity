@@ -159,8 +159,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 26.991467
-  orthographic: 1
+  field of view: 39.2
+  orthographic: 0
   orthographic size: 7
   m_Depth: -1
   m_CullingMask:
@@ -292,7 +292,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4018759833657524, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4018759833657524, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -328,6 +328,28 @@ Prefab:
         type: 2}
       propertyPath: bulletSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114321885417793726, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: spawnOffset
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018759833657524, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018759833657524, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018759833657524, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114705963842099776, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: healthMax
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 33660312285710962, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
@@ -371,6 +393,25 @@ Prefab:
     - target: {fileID: 4667914275939324, guid: 38d78c8872df3e642a862f8355b760bc, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114753983329396184, guid: 38d78c8872df3e642a862f8355b760bc,
+        type: 2}
+      propertyPath: bulletStagger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114753983329396184, guid: 38d78c8872df3e642a862f8355b760bc,
+        type: 2}
+      propertyPath: minionStagger
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 54454712894600388, guid: 38d78c8872df3e642a862f8355b760bc,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667914275939324, guid: 38d78c8872df3e642a862f8355b760bc, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38d78c8872df3e642a862f8355b760bc, type: 2}
