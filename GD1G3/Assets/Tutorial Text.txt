@@ -1,0 +1,11 @@
+Son, there's a lot to know about being a great boss monster, but let's start off with the basics.
+
+Fly up, down, left and right with the [W][A][S][D] keys.
+
+Move the mouse around to change where you're aiming your evil gaze.
+
+Click the left mouse button to fire magical attacks at the heroes.
+
+However, every great boss monster must know how to manage their minions.
+You can summon different kinds of minions with the [Q],[E],[R], and [F] keys.
+Just watch out, since you're a novice summoner, your minions are likely to end up a bit... Incompetent.
