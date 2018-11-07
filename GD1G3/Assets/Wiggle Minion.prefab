@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 54213879584098498}
   m_Layer: 8
   m_Name: Wiggle Minion
-  m_TagString: Untagged
+  m_TagString: Minions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -478,3 +478,4 @@ MonoBehaviour:
   wiggle: 1
   snake: 0
   minionSpeed: 2
+  damage: 0

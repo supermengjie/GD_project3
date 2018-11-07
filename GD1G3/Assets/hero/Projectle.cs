@@ -26,9 +26,18 @@ public class Projectle : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        if(other.CompareTag("Minions"))
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
         if(other.CompareTag("Boss")){
             Debug.Log("we hit");
             DestroyProjectile();
+        }
+        if (other.CompareTag("BossBullets"))
+        {
+            Destroy(other.gameObject);
         }
 
     }

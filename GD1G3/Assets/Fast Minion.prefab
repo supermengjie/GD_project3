@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 54538915518191204}
   m_Layer: 8
   m_Name: Fast Minion
-  m_TagString: Untagged
+  m_TagString: Minions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -478,4 +478,4 @@ MonoBehaviour:
   wiggle: 0
   snake: 0
   minionSpeed: 2
-  damage: 1
+  damage: 0

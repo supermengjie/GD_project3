@@ -51,5 +51,11 @@ public class BossScript : MonoBehaviour
             hp -= 1;
         }
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 12)
+        {
+            hp -= 1;
+        }
+    }
 }
