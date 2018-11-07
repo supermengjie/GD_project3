@@ -39,7 +39,10 @@ public class Projectle : MonoBehaviour {
         {
             Destroy(other.gameObject);
         }
-
+        if(other.gameObject.layer == 4)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void DestroyProjectile(){
