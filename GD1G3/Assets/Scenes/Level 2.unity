@@ -1244,6 +1244,16 @@ Prefab:
       propertyPath: wallCost
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114321885417793726, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: spawnDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 137487581115296604, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e7f02aad24eb4345bbfc833ff5d08cd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
   m_IsPrefabAsset: 0
