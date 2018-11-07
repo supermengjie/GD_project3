@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class heroAI : MonoBehaviour {
 
+	public Image hpBar;
     public float lookRadious = 5f;
     Transform target;
 
@@ -14,7 +16,7 @@ public class heroAI : MonoBehaviour {
     public float maxDistFromWall = 0f;
     public int maxDist = 5;
     public int minDist = 5;
-    public int maxHealth = 100;
+    public float maxHealth = 100;
     public int bulletDamage = 5;
     public int minionDamage = 10;
     public float bulletStagger = 0.25F;
@@ -28,7 +30,7 @@ public class heroAI : MonoBehaviour {
     public float starttimeBTWShots;
 
     private float staggered = 0F;
-    private int currentHealth;
+    private float currentHealth;
     private bool isWandering = false;
     private bool rotatingLeft = false;
     private bool rotatingRight = false;
@@ -106,6 +108,7 @@ public class heroAI : MonoBehaviour {
 
 
         }
+		hpBar.fillAmount = currentHealth / maxHealth;
 	}
 
     IEnumerator stagger(float x)
