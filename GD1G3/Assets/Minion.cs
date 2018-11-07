@@ -7,6 +7,7 @@ public class Minion : MonoBehaviour {
 	public bool fast;
 	public bool wiggle;
 	public bool snake;
+	public bool wall;
 	public int minionSpeed;
 	public float damage;
 	
@@ -36,6 +37,9 @@ public class Minion : MonoBehaviour {
 			minionType = 3;
 			xVar = Random.Range(1.0f, 4.0f);
 		}
+		else if (wall){
+			minionType = 4;
+		}
 		rb = GetComponent<Rigidbody>();
         minionDirX = 1;
         minionDirY = 1;
@@ -61,6 +65,9 @@ public class Minion : MonoBehaviour {
 		// snake
 		else if (minionType == 3){
 			rb.velocity = new Vector3(Mathf.Cos(Time.time) * xVar * minionDirX, 0.0f, -minionSpeed * minionDirY);
+		}
+		else if (minionType == 4){
+			// Happy Halloween
 		}
 		
 		Vector3 minionPos = transform.position;
