@@ -31,10 +31,11 @@ public class Minion_Spawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		if (energy < energyMax){
+    
+        if (energy < energyMax){
 			energy += energyGain * Time.deltaTime;
-		}
+            energyBar.fillAmount = energy / energyMax;
+        }
 		if (spawning <= 0){
 			Vector3 spawnLocation = transform.TransformDirection(Vector3.forward);
 			spawnLocation *= spawnOffset;
@@ -59,7 +60,6 @@ public class Minion_Spawner : MonoBehaviour {
 		}
 		
 		spawning -= Time.deltaTime;
-		energyBar.fillAmount = energy / energyMax;
 		
 	}
 }

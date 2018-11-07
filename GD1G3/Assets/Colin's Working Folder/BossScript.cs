@@ -16,7 +16,7 @@ public class BossScript : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-      maxHp = hp;
+        maxHp = hp;
     }
 
     private void Update()
@@ -48,7 +48,7 @@ public class BossScript : MonoBehaviour
     {
         if (collision.gameObject.layer == 12)
         {
-            currentHealth -= 1;
+            hp -= 1;
         }
     }
 
