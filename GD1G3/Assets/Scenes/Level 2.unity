@@ -1182,6 +1182,16 @@ Prefab:
       propertyPath: m_Name
       value: Hero
       objectReference: {fileID: 0}
+    - target: {fileID: 23422084507959792, guid: c668b23edd12b9f4b9949ed87bf01f47,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 15073f982773e284a83f8b00b1579790, type: 2}
+    - target: {fileID: 23422084507959792, guid: c668b23edd12b9f4b9949ed87bf01f47,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 15073f982773e284a83f8b00b1579790, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c668b23edd12b9f4b9949ed87bf01f47, type: 2}
   m_IsPrefabAsset: 0
