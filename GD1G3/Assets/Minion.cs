@@ -8,6 +8,7 @@ public class Minion : MonoBehaviour {
 	public bool wiggle;
 	public bool snake;
 	public int minionSpeed;
+	public float damage;
 	
 	private float minionX = 0;
 	private float minionY = 0;
@@ -65,23 +66,23 @@ public class Minion : MonoBehaviour {
 		Vector3 minionPos = transform.position;
 		
 		// if minion reaches bottom/top,  wrap to opposite side
-		if (minionPos.z < -6){
+		if (minionPos.z < -45){
             minionDirY *= -1;
-            minionPos.z = -6;
+            minionPos.z = -45;
         }
-		else if (minionPos.z > 6){
+		else if (minionPos.z > 45){
             minionDirY *= -1;
-            minionPos.z = 6;
+            minionPos.z = 45;
         }
 		
 		// if minion reaches left/right, wrap to opposite side
-		if (minionPos.x > 15){
+		if (minionPos.x > 45){
             minionDirX *= -1;
-            minionPos.x = 15;
+            minionPos.x = 45;
         }
-		else if(minionPos.x < -15){
+		else if(minionPos.x < -45){
             minionDirX *= -1;
-            minionPos.x = -15;
+            minionPos.x = -45;
         }
 		
 		transform.position = minionPos;

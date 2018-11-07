@@ -16,4 +16,16 @@ public class BulletScript : MonoBehaviour {
             Destroy(gameObject);
         }
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.layer == 8)
+        {
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.layer == 4)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

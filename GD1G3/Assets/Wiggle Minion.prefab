@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 54213879584098498}
   m_Layer: 8
   m_Name: Wiggle Minion
-  m_TagString: Untagged
+  m_TagString: Minions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +137,7 @@ Transform:
   m_GameObject: {fileID: 1002471513510688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4147922243042270}
   m_Father: {fileID: 0}
@@ -478,3 +478,4 @@ MonoBehaviour:
   wiggle: 1
   snake: 0
   minionSpeed: 2
+  damage: 0

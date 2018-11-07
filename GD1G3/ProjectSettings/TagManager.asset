@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Boss
+  - Minions
+  - BossBullets
   layers:
   - Default
   - TransparentFX
@@ -15,10 +17,10 @@ TagManager:
   - 
   - 
   - Minions
-  - Bullets
+  - Boss Bullets
   - Hero
   - Boss
-  - 
+  - Hero Bullets
   - 
   - 
   - 
