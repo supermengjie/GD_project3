@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectle : MonoBehaviour {
 
     public float speed;
+    public bool piercingBullets;
     private Transform player;
     private Vector3 target;
 	// Use this for initialization
@@ -29,7 +30,10 @@ public class Projectle : MonoBehaviour {
         if(other.CompareTag("Minions"))
         {
             Destroy(other.gameObject);
-            Destroy(gameObject);
+            if (piercingBullets == false)
+            {
+                Destroy(gameObject);
+            }
         }
         if(other.CompareTag("Boss")){
             Debug.Log("we hit");
@@ -40,6 +44,10 @@ public class Projectle : MonoBehaviour {
             Destroy(other.gameObject);
         }
         if(other.gameObject.layer == 4)
+        {
+            Destroy(gameObject);
+        }
+        if(other.gameObject.layer == 13 && piercingBullets == false)
         {
             Destroy(gameObject);
         }

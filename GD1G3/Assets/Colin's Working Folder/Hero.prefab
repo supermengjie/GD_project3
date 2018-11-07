@@ -379,8 +379,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1199415139301750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -25}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4507130529763776}
   m_Father: {fileID: 0}
@@ -900,6 +900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701f129042acf5a48978780346b321be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hpBar: {fileID: 0}
   lookRadious: 5
   moveDir: {x: 0, y: 0, z: 0}
   whatIsWall:
@@ -915,7 +916,7 @@ MonoBehaviour:
   minionStagger: 2
   moveSpeed: 3
   rotSpeed: 100
-  starttimeBTWShots: 1
+  starttimeBTWShots: 3
   projectile: {fileID: 1875767928438614, guid: 6dec687c8cef8924d902d169ae25208d, type: 2}
 --- !u!135 &135763422501373360
 SphereCollider:

@@ -53,13 +53,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4018759833657524}
-  - component: {fileID: 33660312285710962}
   - component: {fileID: 54645926091714170}
   - component: {fileID: 114705963842099776}
   - component: {fileID: 114321885417793726}
   - component: {fileID: 135437780387111020}
   - component: {fileID: 114989595788597442}
   - component: {fileID: 143634293930536084}
+  - component: {fileID: 65916613870909196}
+  - component: {fileID: 65838417056352172}
   m_Layer: 11
   m_Name: Boss
   m_TagString: Boss
@@ -74,8 +75,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1834569541744742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 25}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4350581001424824}
   m_Father: {fileID: 0}
@@ -192,13 +193,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1597774180827326}
   m_Mesh: {fileID: 4300002, guid: caa978cc3fb509c49aff204c3cfe224b, type: 3}
---- !u!33 &33660312285710962
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1834569541744742}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &54645926091714170
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -214,6 +208,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &65838417056352172
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1834569541744742}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.25, y: 1, z: 0.25}
+  m_Center: {x: -1, y: 0.5, z: 0}
+--- !u!65 &65916613870909196
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1834569541744742}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.25, y: 1, z: 0.25}
+  m_Center: {x: 1, y: 0.5, z: 0}
 --- !u!114 &114321885417793726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,13 +249,13 @@ MonoBehaviour:
     type: 2}
   wiggleMinion: {fileID: 1002471513510688, guid: 1620dc203f4b4924e89ab63e8815b90e,
     type: 2}
-  fastCost: 1
-  snakeCost: 2
+  fastCost: 3
+  snakeCost: 3
   wiggleCost: 3
-  energyGain: 1
+  energyGain: 2
   energyMax: 10
-  spawnOffset: 2
-  spawnDelay: 0
+  spawnOffset: 10
+  spawnDelay: 0.5
 --- !u!114 &114705963842099776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,8 +267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411ceed035e51444b8f20e1899214885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
-  speed: 3
+  speed: 5
+  healthBar: {fileID: 0}
+  maxHp: 10
 --- !u!114 &114989595788597442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,9 +282,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1106084936124398, guid: 078aafb0b67171644a050fb0e59cd5b0, type: 2}
-  bulletSpeed: 0
-  coolDown: 0
-  spawnOffset: 0
+  bulletSpeed: 10
+  coolDown: 1
+  spawnOffset: 2
 --- !u!135 &135437780387111020
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -280,7 +299,7 @@ SphereCollider:
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &143634293930536084
 CharacterController:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1834569541744742}

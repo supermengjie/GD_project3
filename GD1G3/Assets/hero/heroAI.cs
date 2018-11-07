@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class heroAI : MonoBehaviour {
 
@@ -21,13 +22,11 @@ public class heroAI : MonoBehaviour {
     public int minionDamage = 10;
     public float bulletStagger = 0.25F;
     public float minionStagger = 0.5F;
-    // Use this for initialization
-
     public float moveSpeed = 3f;
     public float rotSpeed = 100f;
-
     private float timeBTWShots;
     public float starttimeBTWShots;
+    public string nextScene;
 
     private float staggered = 0F;
     private float currentHealth;
@@ -61,6 +60,26 @@ public class heroAI : MonoBehaviour {
         }
         if (isStaggered == false)
         {
+            if(transform.position.x > 40)
+            {
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z);
+                transform.position = new Vector3(40, transform.position.y,transform.position.z);
+            }
+            if (transform.position.x < -40)
+            {
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z);
+                transform.position = new Vector3(-40, transform.position.y, transform.position.z);
+            }
+            if (transform.position.z > 40)
+            {
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z);
+                transform.position = new Vector3(transform.position.x, transform.position.y, 40);
+            }
+            if (transform.position.z < -40)
+            {
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z);
+                transform.position = new Vector3(transform.position.z, transform.position.y, -40);
+            }
             if (Vector3.Distance(transform.position, target.position) <= 10)
             {
                 transform.LookAt(target);
@@ -209,6 +228,7 @@ public class heroAI : MonoBehaviour {
         {
             Debug.Log("GG");
             Destroy(gameObject);
+            SceneManager.LoadScene(nextScene);
             //change to new scene somehow
         }
     }
