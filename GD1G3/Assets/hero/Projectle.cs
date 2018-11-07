@@ -11,6 +11,7 @@ public class Projectle : MonoBehaviour {
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Boss").transform;
         target = new Vector3(player.position.x, player.position.y, player.position.z);
+        transform.LookAt(target);
 	}
 	
 	// Update is called once per frame
