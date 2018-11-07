@@ -13,7 +13,7 @@ public class BossScript : MonoBehaviour
     public Image healthBar;
     public float maxHp;
     public string nextScene;
-
+    public GameObject failedUI;
 
     private void Start()
     {
@@ -29,7 +29,10 @@ public class BossScript : MonoBehaviour
         
 			if (hp <= 0){
             // Game Over
-            SceneManager.LoadScene(nextScene);
+                Debug.Log("lost");
+                failedUI.SetActive(true);
+
+            //SceneManager.LoadScene(nextScene);
 			}
 			
         Vector2 mouseLocation = Input.mousePosition;
