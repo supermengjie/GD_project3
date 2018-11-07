@@ -6,6 +6,6 @@ Move the mouse around to change where you're aiming your evil gaze.
 
 Click the left mouse button to fire magical attacks at the heroes.
 
-However, every great boss monster must know how to manage their minions.
-You can summon different kinds of minions with the [Q],[E],[R], and [F] keys.
+However, every great boss monster must know how to manage their minions. You expend Energy any time you summon.
+You can summon different kinds of minions with the [Q],[E],[R], and [F] keys. Each minon type moves a bit different and take different amounts of Energy to summon.
 Just watch out, since you're a novice summoner, your minions are likely to end up a bit... Incompetent.
