@@ -369,7 +369,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1834569541744742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 30}
+  m_LocalPosition: {x: 0, y: 2, z: 7}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4548678146357148}
@@ -626,8 +626,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 1, z: 0.25}
-  m_Center: {x: -1, y: 0.5, z: 0}
+  m_Size: {x: 0.75, y: 1, z: 0.25}
+  m_Center: {x: -0.5, y: 0.5, z: 0}
 --- !u!65 &65916613870909196
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -638,8 +638,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 1, z: 0.25}
-  m_Center: {x: 1, y: 0.5, z: 0}
+  m_Size: {x: 0.75, y: 1, z: 0.25}
+  m_Center: {x: 0.5, y: 0.5, z: 0}
 --- !u!95 &95148369411191152
 Animator:
   serializedVersion: 3
@@ -675,9 +675,11 @@ MonoBehaviour:
     type: 2}
   wiggleMinion: {fileID: 1266431525453060, guid: 42f48c9460a9fc948a561146ee6474b8,
     type: 2}
+  wallObject: {fileID: 0}
   fastCost: 3
   snakeCost: 3
   wiggleCost: 3
+  wallCost: 0
   energyGain: 2
   energyMax: 10
   spawnOffset: 10
@@ -723,7 +725,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137487581115296604
 SkinnedMeshRenderer:
@@ -793,8 +795,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1
-  m_Radius: 0.5000001
+  m_Height: 2
+  m_Radius: 0.25
   m_SlopeLimit: 0
   m_StepOffset: 0
   m_SkinWidth: 0.0001

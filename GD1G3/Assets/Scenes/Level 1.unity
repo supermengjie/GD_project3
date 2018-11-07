@@ -326,35 +326,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 44395817}
   m_CullTransparentMesh: 0
---- !u!1 &96623028 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1834569541744742, guid: cb8bcf110a9c77c4cae38292c83004c0,
-    type: 2}
-  m_PrefabInternal: {fileID: 1329916891}
---- !u!65 &96623029
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 96623028}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.25, y: 1, z: 0.25}
-  m_Center: {x: 1, y: 0.5, z: 0}
---- !u!65 &96623030
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 96623028}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.25, y: 1, z: 0.25}
-  m_Center: {x: -1, y: 0.5, z: 0}
 --- !u!1 &166172597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2651,79 +2622,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114989595788597442, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: coolDown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114989595788597442, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: spawnOffset
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114989595788597442, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: bulletSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114321885417793726, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: spawnOffset
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018759833657524, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018759833657524, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018759833657524, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114705963842099776, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: healthMax
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114989595788597442, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: Bullet
-      value: 
-      objectReference: {fileID: 1106084936124398, guid: 078aafb0b67171644a050fb0e59cd5b0,
-        type: 2}
-    - target: {fileID: 114321885417793726, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: energyBar
-      value: 
-      objectReference: {fileID: 1912856265}
-    - target: {fileID: 114321885417793726, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: spawnDelay
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114321885417793726, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: energyGain
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114321885417793726, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: fastCost
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114321885417793726, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: snakeCost
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114321885417793726, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: wiggleCost
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 114705963842099776, guid: cb8bcf110a9c77c4cae38292c83004c0,
         type: 2}
       propertyPath: healthBar
@@ -2731,26 +2629,15 @@ Prefab:
       objectReference: {fileID: 702315766}
     - target: {fileID: 114705963842099776, guid: cb8bcf110a9c77c4cae38292c83004c0,
         type: 2}
-      propertyPath: hp
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114705963842099776, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: maxHp
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114705963842099776, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
-      propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114705963842099776, guid: cb8bcf110a9c77c4cae38292c83004c0,
-        type: 2}
       propertyPath: failedUI
       value: 
       objectReference: {fileID: 1049667524}
-    m_RemovedComponents:
-    - {fileID: 33660312285710962, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
+    - target: {fileID: 114321885417793726, guid: cb8bcf110a9c77c4cae38292c83004c0,
+        type: 2}
+      propertyPath: energyBar
+      value: 
+      objectReference: {fileID: 1912856265}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb8bcf110a9c77c4cae38292c83004c0, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1338694964
