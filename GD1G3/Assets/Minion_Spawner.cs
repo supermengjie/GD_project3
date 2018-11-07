@@ -24,13 +24,14 @@ public class Minion_Spawner : MonoBehaviour {
 	private float spawning;
 	public Animator anim;
 	
-	
+	private float lasttime  =0f;
 	
 	// Use this for initialization
 	void Start () {
 		spawnOffset *= -1;
 		spawning = spawnDelay;
 		energy = energyMax;
+
 		//anim = gameObject.GetComponent<Animator>();
 	}
 	
@@ -41,40 +42,42 @@ public class Minion_Spawner : MonoBehaviour {
 			energy += energyGain * Time.deltaTime;
             energyBar.fillAmount = energy / energyMax;
         }
-		if (spawning <= 0){
+		if (Time.time  > lasttime+spawnDelay){
 			Vector3 spawnLocation = transform.TransformDirection(Vector3.forward);
 			spawnLocation *= spawnOffset;
 			spawnLocation += transform.localPosition;
-			
+            lasttime = Time.time;
 			if (Input.GetAxis("Spawn1") == 1 && energy >= fastCost){
 				GameObject go = Instantiate(fastMinion) as GameObject;
 				go.transform.position = spawnLocation;
 				anim.SetBool("Spawning", true);
 				energy -= fastCost;
-			}
+                spawning = spawnDelay;
+            }
 			else if (Input.GetAxis("Spawn2") == 1 && energy >= snakeCost){
 				GameObject go = Instantiate(snakeMinion) as GameObject;
 				go.transform.position = spawnLocation;
 				anim.SetBool("Spawning", true);
 				energy -= snakeCost;
-			}
+                spawning = spawnDelay;
+            }
 			else if (Input.GetAxis("Spawn3") == 1 && energy >= wiggleCost){
 				GameObject go = Instantiate(wiggleMinion) as GameObject;
 				go.transform.position = spawnLocation;
 				anim.SetBool("Spawning", true);
 				energy -= wiggleCost;
-			}
+                spawning = spawnDelay;
+            }
 			else if (Input.GetAxis("Spawn4") == 1 && energy >= wallCost){
-				GameObject go = Instantiate(wiggleMinion) as GameObject;
+				GameObject go = Instantiate(wallObject) as GameObject;
 				go.transform.position = spawnLocation;
-					anim.SetBool("Spawning", true);
-			energy -= wallCost;
-			}
+				anim.SetBool("Spawning", true);
+			    energy -= wallCost;
+                spawning = spawnDelay;
+            }
 			anim.SetBool("Spawning", false);
-			spawning = spawnDelay;
+            
 		}
-		
-		spawning -= Time.deltaTime;
 		
 	}
 }
