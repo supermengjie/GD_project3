@@ -17,16 +17,20 @@ public class heroAI : MonoBehaviour {
     public int maxHealth = 100;
     public int bulletDamage = 5;
     public int minionDamage = 10;
+    public float bulletStagger = 0.25F;
+    public float minionStagger = 0.5F;
     // Use this for initialization
 
     public float moveSpeed = 3f;
     public float rotSpeed = 100f;
 
+    private float staggered = 0F;
     private int currentHealth;
     private bool isWandering = false;
     private bool rotatingLeft = false;
     private bool rotatingRight = false;
     private bool isWalking = false;
+    private bool isStaggered = false;
 
     private void Awake()
     {
@@ -40,42 +44,60 @@ public class heroAI : MonoBehaviour {
         transform.rotation = Quaternion.LookRotation(moveDir);
         currentHealth = maxHealth;
 
-
     }
 	
 	// Update is called once per frame
 	void Update () {
-       if (Vector3.Distance(transform.position, target.position) <= 10)
+       if (staggered > 0)
         {
-            transform.LookAt(target);
-            if (Vector3.Distance(transform.position, target.position) >= minDist)
+            StartCoroutine(stagger(staggered));
+            staggered = 0;
+        }
+        if (isStaggered == false)
+        {
+            if (Vector3.Distance(transform.position, target.position) <= 10)
             {
-                transform.position += transform.forward * moveSpeed * Time.deltaTime;
+                transform.LookAt(target);
+                if (Vector3.Distance(transform.position, target.position) >= minDist)
+                {
+                    transform.position += transform.forward * moveSpeed * Time.deltaTime;
+                }
             }
-        }else{
-
-            if (isWandering == false)
+            else
             {
-                StartCoroutine(Wander());
-            }
 
-           if (rotatingRight == true)
-            {
-                transform.Rotate(transform.up * Time.deltaTime * rotSpeed);
-            }
-            if (rotatingLeft == true)
-            {
-                transform.Rotate(transform.up * Time.deltaTime * -rotSpeed);
-            }
+                if (isWandering == false)
+                {
+                    StartCoroutine(Wander());
+                }
 
-            if (isWalking == true)
-            {
-                transform.position += transform.forward * moveSpeed * Time.deltaTime;
+                if (rotatingRight == true)
+                {
+                    transform.Rotate(transform.up * Time.deltaTime * rotSpeed);
+                }
+                if (rotatingLeft == true)
+                {
+                    transform.Rotate(transform.up * Time.deltaTime * -rotSpeed);
+                }
 
+                if (isWalking == true)
+                {
+                    transform.position += transform.forward * moveSpeed * Time.deltaTime;
+
+                }
             }
         }
-		
 	}
+
+    IEnumerator stagger(float x)
+    {
+        Debug.Log("in the stagger function");
+        Debug.Log(Time.time);
+        isStaggered = true;
+        yield return new WaitForSecondsRealtime(x);
+        isStaggered = false;
+        Debug.Log(Time.time);
+    }
 
     private void OnDrawGizmos()
     {
@@ -147,13 +169,15 @@ public class heroAI : MonoBehaviour {
             Destroy(collision.gameObject);
             currentHealth -= bulletDamage;
             Debug.Log(currentHealth);
+            staggered = bulletStagger;
             //stagger less than when there is a collision witha  minion?
         }
 
         if (collision.gameObject.layer == 8) // Collision with minion
         {
+            Destroy(collision.gameObject);
             currentHealth -= minionDamage;
-            //stagger?
+            staggered = minionStagger;
         }
         if (collision.gameObject.layer == 11) // Collision with Boss
         {
