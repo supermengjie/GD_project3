@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 114321885417793726}
   - component: {fileID: 135437780387111020}
   - component: {fileID: 114989595788597442}
+  - component: {fileID: 143634293930536084}
   m_Layer: 11
   m_Name: Boss
   m_TagString: Boss
@@ -237,13 +238,6 @@ MonoBehaviour:
   energyMax: 10
   spawnOffset: 2
   spawnDelay: 0
-  energyMax: 0
-  energyRegenPeriod: 0.1
-  spawnOffset: 5
-  framesSinceLastSpawn: 60
-  spawn1Energy: 10
-  spawn2Energy: 20
-  spawn3Energy: 30
 --- !u!114 &114705963842099776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411ceed035e51444b8f20e1899214885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMax: 0
+  hp: 0
   speed: 3
 --- !u!114 &114989595788597442
 MonoBehaviour:
@@ -286,7 +280,7 @@ SphereCollider:
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &143634293930536084
 CharacterController:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1834569541744742}

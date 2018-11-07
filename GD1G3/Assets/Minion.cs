@@ -87,11 +87,4 @@ public class Minion : MonoBehaviour {
 		
 		transform.position = minionPos;
 	}
-	
-	void OnTriggerEnter(Collider other){
-		if (other.gameObject.layer == 10){
-			other.gameObject.GetComponent<MovementScript>().hp -= damage;
-			Destroy(this.gameObject);
-		}
-	}
 }

@@ -887,7 +887,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &114753983329396184
 MonoBehaviour:
@@ -911,6 +911,8 @@ MonoBehaviour:
   maxHealth: 100
   bulletDamage: 5
   minionDamage: 10
+  bulletStagger: 1
+  minionStagger: 2
   moveSpeed: 3
   rotSpeed: 100
 --- !u!135 &135763422501373360

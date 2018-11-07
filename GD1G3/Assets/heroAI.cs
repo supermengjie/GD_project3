@@ -19,11 +19,15 @@ public class heroAI : MonoBehaviour {
     public int minionDamage = 10;
     public float bulletStagger = 0.25F;
     public float minionStagger = 0.5F;
+		
+		public int tiltMax;
+		public float tiltSpeed;
     // Use this for initialization
 
     public float moveSpeed = 3f;
     public float rotSpeed = 100f;
-
+		
+		private float lastRotation;
     private float staggered = 0F;
     private int currentHealth;
     private bool isWandering = false;
@@ -31,6 +35,7 @@ public class heroAI : MonoBehaviour {
     private bool rotatingRight = false;
     private bool isWalking = false;
     private bool isStaggered = false;
+		private GameObject childModel;
 
     private void Awake()
     {
@@ -43,7 +48,8 @@ public class heroAI : MonoBehaviour {
         moveDir = ChooseDirection();
         transform.rotation = Quaternion.LookRotation(moveDir);
         currentHealth = maxHealth;
-
+				childModel = transform.GetChild(0).gameObject;
+			lastRotation = transform.rotation.y;
     }
 	
 	// Update is called once per frame
@@ -58,7 +64,23 @@ public class heroAI : MonoBehaviour {
             if (Vector3.Distance(transform.position, target.position) <= 10)
             {
                 transform.LookAt(target);
-                if (Vector3.Distance(transform.position, target.position) >= minDist)
+								if (transform.rotation.y < lastRotation && childModel.transform.rotation.x < tiltMax){
+								  childModel.transform.Rotate(childModel.transform.right *tiltSpeed *Time.deltaTime);
+								}
+								else if (transform.rotation.y > lastRotation && childModel.transform.rotation.x > -tiltMax){
+									childModel.transform.Rotate(childModel.transform.right *-tiltSpeed *Time.deltaTime);
+								}
+								else if (transform.rotation.y >= tiltMax || transform.rotation.y <= -tiltMax){
+									if (transform.rotation.y < 0){
+										childModel.transform.Rotate(childModel.transform.right *-tiltSpeed *Time.deltaTime);
+									}
+									else if (transform.rotation.y > 0){
+										childModel.transform.Rotate(childModel.transform.right *tiltSpeed *Time.deltaTime);
+									}
+								}
+								lastRotation = transform.rotation.y;
+								
+								if (Vector3.Distance(transform.position, target.position) >= minDist)
                 {
                     transform.position += transform.forward * moveSpeed * Time.deltaTime;
                 }

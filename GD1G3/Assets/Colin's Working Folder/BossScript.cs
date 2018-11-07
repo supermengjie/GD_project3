@@ -1,31 +1,33 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System;
 
 
 public class BossScript : MonoBehaviour
 {
-    public int healthMax;
+    public float hp;
     public float speed = 3.0F;
     private Rigidbody rb;
-    private int currentHealth;
+		
+    private float maxHp;
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        currentHealth = healthMax;
+      maxHp = hp;
     }
 
     private void Update()
     {
         //Debug.Log(transform.position);
         rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speed, rb.velocity[1], Input.GetAxis("Vertical") * speed);
-        if (currentHealth == 0)
-        {
-            //endgame
-        }
-       
+        
+			if (hp <= 0){
+				// Game Over
+			}
+			
         Vector2 mouseLocation = Input.mousePosition;
         double newAngle = GetDirection(mouseLocation[0], mouseLocation[1]);
         transform.localEulerAngles = new Vector3(0, (float)newAngle, 0);
