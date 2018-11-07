@@ -44,4 +44,12 @@ public class BossScript : MonoBehaviour
         return angleToMouse;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == 12)
+        {
+            currentHealth -= 1;
+        }
+    }
+
 }

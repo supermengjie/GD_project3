@@ -915,6 +915,8 @@ MonoBehaviour:
   minionStagger: 2
   moveSpeed: 3
   rotSpeed: 100
+  starttimeBTWShots: 1
+  projectile: {fileID: 1875767928438614, guid: 6dec687c8cef8924d902d169ae25208d, type: 2}
 --- !u!135 &135763422501373360
 SphereCollider:
   m_ObjectHideFlags: 1
