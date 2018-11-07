@@ -27,6 +27,7 @@ public class heroAI : MonoBehaviour {
     private float timeBTWShots;
     public float starttimeBTWShots;
     public string nextScene;
+    public bool isdead = false;
 
     private float staggered = 0F;
     private float currentHealth;
@@ -37,6 +38,8 @@ public class heroAI : MonoBehaviour {
     private bool isStaggered = false;
     public GameObject projectile;
 
+    public GameObject NextLevelMenuUI;
+
     private void Awake()
     {
         target = GameObject.FindWithTag("Boss").transform;
@@ -44,6 +47,7 @@ public class heroAI : MonoBehaviour {
 
     
     void Start () {
+        isdead = false;
         rbody = GetComponent<Rigidbody>();
         moveDir = ChooseDirection();
         transform.rotation = Quaternion.LookRotation(moveDir);
@@ -227,7 +231,9 @@ public class heroAI : MonoBehaviour {
         if ( currentHealth <= 0) // round won
         {
             Debug.Log("GG");
-            SceneManager.LoadScene(nextScene);
+            isdead = true;
+            NextLevelMenuUI.SetActive(true);
+            //SceneManager.LoadScene(nextScene);
             //change to new scene somehow
         }
     }
