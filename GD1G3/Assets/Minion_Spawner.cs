@@ -22,7 +22,7 @@ public class Minion_Spawner : MonoBehaviour {
 	
 	private float energy;
 	private float spawning;
-	private Animator anim;
+	public Animator anim;
 	
 	
 	
@@ -31,7 +31,7 @@ public class Minion_Spawner : MonoBehaviour {
 		spawnOffset *= -1;
 		spawning = spawnDelay;
 		energy = energyMax;
-		anim = gameObject.GetComponent<Animator>();
+		//anim = gameObject.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
