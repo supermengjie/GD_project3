@@ -8,6 +8,7 @@ public class Minion : MonoBehaviour {
 	public bool wiggle;
 	public bool snake;
 	public int minionSpeed;
+	public float damage;
 	
 	private float minionX = 0;
 	private float minionY = 0;

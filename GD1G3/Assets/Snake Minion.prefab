@@ -478,3 +478,4 @@ MonoBehaviour:
   wiggle: 0
   snake: 1
   minionSpeed: 3
+  damage: 0

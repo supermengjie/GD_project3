@@ -55,11 +55,11 @@ GameObject:
   - component: {fileID: 4018759833657524}
   - component: {fileID: 33660312285710962}
   - component: {fileID: 54645926091714170}
-  - component: {fileID: 143634293930536084}
   - component: {fileID: 114705963842099776}
   - component: {fileID: 114321885417793726}
   - component: {fileID: 135437780387111020}
   - component: {fileID: 114989595788597442}
+  - component: {fileID: 143634293930536084}
   m_Layer: 11
   m_Name: Boss
   m_TagString: Boss
@@ -225,18 +225,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233c2f48e623720458da1dbf0f4f7ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  energyBar: {fileID: 0}
   fastMinion: {fileID: 1880665976931454, guid: 5cf9d2d13790c854eb3d20b24990bb3b, type: 2}
   snakeMinion: {fileID: 1233508743964208, guid: ee83ca6ddc354b842b87476e0ed305f9,
     type: 2}
   wiggleMinion: {fileID: 1002471513510688, guid: 1620dc203f4b4924e89ab63e8815b90e,
     type: 2}
-  energyMax: 0
-  energyRegenPeriod: 0.1
-  spawnOffset: 5
-  framesSinceLastSpawn: 60
-  spawn1Energy: 10
-  spawn2Energy: 20
-  spawn3Energy: 30
+  fastCost: 1
+  snakeCost: 2
+  wiggleCost: 3
+  energyGain: 1
+  energyMax: 10
+  spawnOffset: 2
+  spawnDelay: 0
 --- !u!114 &114705963842099776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -248,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411ceed035e51444b8f20e1899214885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMax: 0
+  hp: 0
   speed: 3
 --- !u!114 &114989595788597442
 MonoBehaviour:
@@ -279,7 +280,7 @@ SphereCollider:
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &143634293930536084
 CharacterController:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1834569541744742}
