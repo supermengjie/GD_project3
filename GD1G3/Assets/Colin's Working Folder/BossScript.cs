@@ -31,7 +31,10 @@ public class BossScript : MonoBehaviour
 			
         Vector2 mouseLocation = Input.mousePosition;
         double newAngle = GetDirection(mouseLocation[0], mouseLocation[1]);
-        transform.localEulerAngles = new Vector3(0, (float)newAngle, 0);
+        if (!PauseMenu.IsGamePaused)
+        {
+            transform.localEulerAngles = new Vector3(0, (float)newAngle, 0);
+        }
     }
 
     double GetDirection(float x, float y)
