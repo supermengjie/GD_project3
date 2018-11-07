@@ -9,9 +9,11 @@ public class Minion_Spawner : MonoBehaviour {
 	public GameObject fastMinion;
 	public GameObject snakeMinion;
 	public GameObject wiggleMinion;
+	public GameObject wallObject;
 	public float fastCost;
 	public float snakeCost;
 	public float wiggleCost;
+	public float wallCost;
 	public float energyGain;
 	public float energyMax;
 	public float spawnOffset;
@@ -20,6 +22,7 @@ public class Minion_Spawner : MonoBehaviour {
 	
 	private float energy;
 	private float spawning;
+	private Animator anim;
 	
 	
 	
@@ -28,6 +31,7 @@ public class Minion_Spawner : MonoBehaviour {
 		spawnOffset *= -1;
 		spawning = spawnDelay;
 		energy = energyMax;
+		anim = gameObject.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -45,18 +49,28 @@ public class Minion_Spawner : MonoBehaviour {
 			if (Input.GetAxis("Spawn1") == 1 && energy >= fastCost){
 				GameObject go = Instantiate(fastMinion) as GameObject;
 				go.transform.position = spawnLocation;
+				anim.SetBool("Spawning", true);
 				energy -= fastCost;
 			}
 			else if (Input.GetAxis("Spawn2") == 1 && energy >= snakeCost){
 				GameObject go = Instantiate(snakeMinion) as GameObject;
 				go.transform.position = spawnLocation;
+				anim.SetBool("Spawning", true);
 				energy -= snakeCost;
 			}
 			else if (Input.GetAxis("Spawn3") == 1 && energy >= wiggleCost){
 				GameObject go = Instantiate(wiggleMinion) as GameObject;
 				go.transform.position = spawnLocation;
+				anim.SetBool("Spawning", true);
 				energy -= wiggleCost;
 			}
+			else if (Input.GetAxis("Spawn4") == 1 && energy >= wallCost){
+				GameObject go = Instantiate(wiggleMinion) as GameObject;
+				go.transform.position = spawnLocation;
+					anim.SetBool("Spawning", true);
+			energy -= wallCost;
+			}
+			anim.SetBool("Spawning", false);
 			spawning = spawnDelay;
 		}
 		
