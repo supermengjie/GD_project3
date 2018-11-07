@@ -16,8 +16,9 @@ public class Projectle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        if(target.x== transform.position.x && target.z == transform.position.z){
+        transform.position += transform.forward * Time.deltaTime * speed;
+        if(Mathf.Abs(transform.localPosition.x) > 50 || Mathf.Abs(transform.localPosition.z) > 50)
+        {
             DestroyProjectile();
         }
     
