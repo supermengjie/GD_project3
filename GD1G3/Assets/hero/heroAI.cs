@@ -227,7 +227,6 @@ public class heroAI : MonoBehaviour {
         if ( currentHealth <= 0) // round won
         {
             Debug.Log("GG");
-            Destroy(gameObject);
             SceneManager.LoadScene(nextScene);
             //change to new scene somehow
         }

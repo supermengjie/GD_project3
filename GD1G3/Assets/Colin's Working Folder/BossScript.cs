@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 using System;
 
 
@@ -11,6 +12,7 @@ public class BossScript : MonoBehaviour
     private Rigidbody rb;
     public Image healthBar;
     public float maxHp;
+    public string nextScene;
 
 
     private void Start()
@@ -26,7 +28,8 @@ public class BossScript : MonoBehaviour
         rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speed, rb.velocity[1], Input.GetAxis("Vertical") * speed);
         
 			if (hp <= 0){
-				// Game Over
+            // Game Over
+            SceneManager.LoadScene(nextScene);
 			}
 			
         Vector2 mouseLocation = Input.mousePosition;
