@@ -679,11 +679,12 @@ MonoBehaviour:
   fastCost: 3
   snakeCost: 3
   wiggleCost: 3
-  wallCost: 0
+  wallCost: 4
   energyGain: 2
   energyMax: 10
   spawnOffset: 10
-  spawnDelay: 0.5
+  spawnDelay: 1
+  anim: {fileID: 0}
 --- !u!114 &114705963842099776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -742,7 +743,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: da327d807d3c6414994ce167de8f5071, type: 3}
+  - {fileID: 2100000, guid: 7e7f02aad24eb4345bbfc833ff5d08cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
