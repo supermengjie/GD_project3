@@ -24,6 +24,9 @@ public class heroAI : MonoBehaviour {
     public float moveSpeed = 3f;
     public float rotSpeed = 100f;
 
+    private float timeBTWShots;
+    public float starttimeBTWShots;
+
     private float staggered = 0F;
     private int currentHealth;
     private bool isWandering = false;
@@ -31,6 +34,7 @@ public class heroAI : MonoBehaviour {
     private bool rotatingRight = false;
     private bool isWalking = false;
     private bool isStaggered = false;
+    public GameObject projectile;
 
     private void Awake()
     {
@@ -85,7 +89,22 @@ public class heroAI : MonoBehaviour {
                     transform.position += transform.forward * moveSpeed * Time.deltaTime;
 
                 }
+
+               
+                
             }
+            if (timeBTWShots <= 0)
+            {
+                Instantiate(projectile, transform.position, Quaternion.identity);
+                timeBTWShots = starttimeBTWShots;
+
+            }
+            else
+            {
+                timeBTWShots -= Time.deltaTime;
+            }
+
+
         }
 	}
 
