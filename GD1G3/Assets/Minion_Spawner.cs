@@ -27,6 +27,7 @@ public class Minion_Spawner : MonoBehaviour {
 	void Start () {
 		spawnOffset *= -1;
 		spawning = spawnDelay;
+		energy = energyMax;
 	}
 	
 	// Update is called once per frame
